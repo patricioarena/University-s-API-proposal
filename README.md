@@ -5,3 +5,6 @@ The present project is a branch of the Julian Knight project which is why the va
 
 However, the authentication system has been implemented to be able to use the upload of the project to Heroku, as indicated in the official documentation of Node-Red
 http://nodered.org/docs/security.html#generating-the-password-hash
+
+The current password is **@123qwe.** it can be changed using
+`node -e "console.log (require ('bcryptjs'). hashSync (process.argv [1], 8));" your-password-here`
