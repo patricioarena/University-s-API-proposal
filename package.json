@@ -1,0 +1,55 @@
+{
+  "name": "node-red-template-embedded",
+  "version": "0.0.5",
+  "description": "A template project for Node-Red in embedded mode allowing multiple instances",
+  "private": true,
+  "readme": "README.md",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "debug": "cross-env NODE_ENV=development node --debug server.js",
+    "admin": "node-red-admin",
+    "adminauth": "node -e \"console.log(require('bcryptjs').hashSync(process.argv[1], 8));\"",
+    "selfsigned": "node -e \"var pems = require('selfsigned').generate([{ name: 'commonName', value: process.argv[1] }], { days: 365 }); var fs = require('fs'); fs.writeFileSync('server.key', pems.private); fs.writeFileSync('server.crt', pems.cert); console.log('Updated server.key|crt for CN', process.argv[1]);\""
+  },
+  "repository": "TotallyInformation/node-red-template-embedded",
+  "author": {
+    "name": "Julian Knight (TotallyInformation)",
+    "url": ""
+  },
+  "keywords": [
+    "node-red",
+    "heroku"
+  ],
+  "homepage": "https://github.com/TotallyInformation/node-red-template-embedded",
+  "bugs": "",
+  "config": {
+    "use_https": "false",
+    "nr_userfolder": "./.nodered",
+    "nr_flowfile": "./flows.json",
+    "nr_credentialsecret": null,
+    "nr_title": "Node RED Embedded"
+  },
+  "contributors": [
+    {
+      "name": "Patricio Arena",
+      "url": ""
+    },
+    "patricio.e.arena@gmail.com"
+  ],
+  "devDependencies": {},
+  "optionalDependencies": {
+    "cross-env": "4.*",
+    "selfsigned": "1.8.*",
+    "bcryptjs": "^2.4.0"
+  },
+  "dependencies": {
+    "express": "4.*",
+    "node-red": ">=0.16.*"
+  },
+  "engines": {
+    "node": "v10.14.2",
+    "npm": "6.4.1"
+  }
+}

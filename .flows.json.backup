@@ -1,0 +1,52 @@
+[
+    {
+        "id": "12751e08.b81292",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "36a63472.27336c",
+        "type": "http in",
+        "z": "12751e08.b81292",
+        "name": "",
+        "url": "",
+        "method": "get",
+        "upload": false,
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "fe89f27f.a7fc8"
+            ]
+        ]
+    },
+    {
+        "id": "fe89f27f.a7fc8",
+        "type": "function",
+        "z": "12751e08.b81292",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "157ec126.8ce37f"
+            ]
+        ]
+    },
+    {
+        "id": "157ec126.8ce37f",
+        "type": "http response",
+        "z": "12751e08.b81292",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 620,
+        "y": 120,
+        "wires": []
+    }
+]
